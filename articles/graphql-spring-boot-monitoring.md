@@ -3,7 +3,7 @@ title: "graphql-spring-boot と Micrometer で始める GraphQL モニタリン�
 emoji: "⚖️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["graphql", "springboot"]
-published: false
+published: true
 ---
 
 graphql-spring-boot で実装した GraphQL サーバで、Micrometer を使って GraphQL オペレーションレベルのメトリクスを簡単に実装し、Prometheus と Grafana で可視化したという話です。
@@ -126,7 +126,7 @@ https://github.com/itkq/graphql-spring-boot-monitoring
 
 Prometheus の事例はたくさんあるので詳細は割愛します。Micrometer のメトリクスエンドポイントを叩くと分かりますが、GraphQL 以外にも多くのメトリクスが出力されていることがわかります。不要なものは収集しても仕方がないので、[relabel_config](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config) を使って drop するのがいいでしょう。
 
-# Grafana で可視化 
+# Grafana で可視化
 
 例えば次のようなダッシュボードを作れます。
 
