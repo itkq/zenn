@@ -120,7 +120,7 @@ graphql_timer_query_seconds_sum{operation="validation",operationName="foo",} 0.0
 
 # デモ用リポジトリ
 
-TODO
+https://github.com/itkq/graphql-spring-boot-monitoring
 
 # Prometheus でメトリクスを集める
 
