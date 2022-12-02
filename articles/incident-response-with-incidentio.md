@@ -4,6 +4,7 @@ emoji: "🌟"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["incidentio"]
 published: false
+publication_name: "ubie_dev"
 ---
 
 :::message
