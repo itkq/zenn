@@ -1,5 +1,5 @@
 ---
-title: "incident.ioによるインシデントレスポンス"
+title: "incident.ioを活用したインシデントレスポンス"
 emoji: "🌟"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["incidentio"]
@@ -8,10 +8,10 @@ publication_name: "ubie_dev"
 ---
 
 :::message
-この記事は[Ubie Engineers & Designers Advent Calendar 2022](https://adventar.org/calendars/7781) 8日目の記事です
+この記事は [Ubie Engineers & Designers Advent Calendar 2022](https://adventar.org/calendars/7781) 8日目の記事です。
 :::
 
-Ubie DiscoveryでSREをしているitkqです。Ubieでは、[incident.io](https://incident.io/)を2021年10月頃から導入し、Slackを中心としたインシデントレスポンスを行っています。incident.ioの特徴と、Ubieでの導入から具体的な活用方法を説明します。
+Ubie DiscoveryでSREをしているitkqです。Ubie Discoveryでは、[incident.io](https://incident.io/)を2021年10月頃から導入し、Slackを中心としたインシデントレスポンスを行っています。incident.ioの特徴と、Ubieでの導入から具体的な活用方法を説明します。
 
 # incident.ioとは
 
@@ -38,9 +38,9 @@ https://incident.io/
 ![Slack commands](/images/incident-response-with-incidentio/slack-commands.png =500x)
 *War roomにおける/incコマンド。サブコマンドもあるが覚えずともUIで利用できる*
 ![UI example](/images/incident-response-with-incidentio/inc-example.png =800x)
-*インシデントのWeb UI*
+*各インシデントに対応するWeb UI*
 ![GitHub Attachment](/images/incident-response-with-incidentio/attach-github.png =500x)
-*GitHub連携*
+*GitHub連携。INC-Nとdescriptionに書いておけば勝手に紐づけてくれる*
 
 
 # 導入のきっかけ
@@ -79,7 +79,7 @@ Ubieでincident.ioの導入から活用までにしたことを振り返って�
 
 ## 2. 導入期
 ### 導入に向けた下準備
-SREのプラクティスと、incident.ioの機能を見比べながら、インシデントリードなどの役割を整理しました。他にもCustom fieldsにProductを足したり、インシデント作成時に自動的に招待するSlackグループの設定をしました。
+SREのプラクティスと、incident.ioの機能を見比べながら、インシデントリードなどの役割を整理しました。他にもCustom fieldsにProductを足して区別可能にしたり、インシデント作成時に自動的に招待するSlackグループの設定をしたりしました。
 
 ### ドキュメントの作成と社内周知
 最初はSREがインシデントリードを引き受ける想定はしつつ、SRE以外の人も起票できることを目指し、ドキュメントを作成しました。「どういうときに起票するのか」「起票してまずやること」など最低限のことをまとめました。全社があつまる場で、Squadcastの廃止とincident.ioへの移行を共有しました。
@@ -90,7 +90,7 @@ SREのプラクティスと、incident.ioの機能を見比べながら、イン
 ### フォローアップの定期確認とポストモーテムの民主化
 incident.ioではインシデント横断でフォローアップ進捗を確認できます。この機能を使い、SREの定例で進捗をチェックしつつ、適宜リマインドするようにしました。
 
-また、以前からSRE中心にポストモーテムを行ってはいましたが、incident.ioでのプロセスにも組み込み、正式なものとしました。Notionのデータベースとテンプレートを使ってドキュメントを書き、incident.io上のインシデントと紐付けるようにしました。合わせてポストモーテムを説明するドキュメントも作成し、ポストモーテムを行う前に読み合わせるプロセスも足しました（初めての参加者がいる場合）。徐々にファシリテーターをSRE以外のメンバーにも担当してもらうようにしました。
+また、以前からSRE中心にポストモーテムを行ってはいましたが、incident.ioでのプロセスにも組み込み、正式なものとしました。Notionのデータベースとテンプレートを使ってドキュメントを書き、incident.io上のインシデントと紐付けるようにしました。合わせてポストモーテムを説明するドキュメントも作成し、特に初参加者がいる場合はポストモーテムを行う前に読み合わせるプロセスも追加しました。徐々にファシリテーターをSRE以外のメンバーにも担当してもらうようにしました。
 
 ![Postmortem document](/images/incident-response-with-incidentio/postmortem-onboarding.png =700x)
 *ポストモーテムの説明（一部抜粋）*
@@ -110,7 +110,7 @@ Custom fieldsにTypeという項目を足し、プロダクトインシデント
 各事業におけるインシデントリード、プロダクトや機能単位であるFirst responder、共通基盤やインフラなどのSecond responderを定義し、プロダクトやSeverityに応じてエスカレーションする体制を整えました。また、Opsgenieと連携し、システム的な電話呼び出しに対応しました。
 
 ### オンボーディング強化や避難訓練の実施
-今後も人員が増加していくことを考えると、スケーラブルなオンボーディングがあるとより嬉しいです。そこでインシデント訓練動画を撮影し、KnowBe4から配信して、視聴してもらうようにしました。
+今後も人員が増加していくことを考えると、スケーラブルなオンボーディングがあるとより嬉しいです。そこでインシデント訓練動画を録画し、KnowBe4から配信して、視聴してもらうようにしました。
 
 また、あるインシデントが発生した想定で、通話しながらincident.ioを操作する避難訓練の実施も始めています。
 
