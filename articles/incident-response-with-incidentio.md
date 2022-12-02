@@ -36,7 +36,7 @@ https://incident.io/
 ## スクリーンショット
 
 ![Slack commands](/images/incident-response-with-incidentio/slack-commands.png =500x)
-*/incコマンド。サブコマンドもあるが覚えずとも利用できる*
+*War roomにおける/incコマンド。サブコマンドもあるが覚えずともUIで利用できる*
 ![UI example](/images/incident-response-with-incidentio/inc-example.png =800x)
 *インシデントのWeb UI*
 ![GitHub Attachment](/images/incident-response-with-incidentio/attach-github.png =500x)
@@ -90,21 +90,21 @@ SREのプラクティスと、incident.ioの機能を見比べながら、イン
 ### フォローアップの定期確認とポストモーテムの民主化
 incident.ioではインシデント横断でフォローアップ進捗を確認できます。この機能を使い、SREの定例で進捗をチェックしつつ、適宜リマインドするようにしました。
 
-また、以前からSRE中心にポストモーテムを行ってはいましたが、incident.ioでのプロセスにも組み込み、正式なものとしました。Notionのデータベースとテンプレートを使ってドキュメントを書き、incident.io上のインシデントと紐付けるようにしました。合わせて「ポストモーテムの心構え」的なドキュメントも作成し、ポストモーテムを行う前に読み合わせるプロセスも足しました（初めての参加者がいる場合）。徐々にファシリテーターをSRE以外のメンバーにも担当してもらうようにしました。
+また、以前からSRE中心にポストモーテムを行ってはいましたが、incident.ioでのプロセスにも組み込み、正式なものとしました。Notionのデータベースとテンプレートを使ってドキュメントを書き、incident.io上のインシデントと紐付けるようにしました。合わせてポストモーテムを説明するドキュメントも作成し、ポストモーテムを行う前に読み合わせるプロセスも足しました（初めての参加者がいる場合）。徐々にファシリテーターをSRE以外のメンバーにも担当してもらうようにしました。
 
 ![Postmortem document](/images/incident-response-with-incidentio/postmortem-onboarding.png =700x)
-*ポストモーテムのドキュメント (一部抜粋)*
+*ポストモーテムの説明（一部抜粋）*
 ![Postmortem example](/images/incident-response-with-incidentio/postmortem-example.png =600x)
-*ポストモーテムの例 (一部抜粋)*
+*ポストモーテムの例（一部抜粋）*
 
 
 ## 3. 活用期
 
 ### スコープの拡大
-Custom fieldsに項目を増やしつつ、セキュリティインシデントや端末紛失といったコーポレートインシデントもincident.ioで一元的に扱うことにしました。Privateインシデントの機能があり、特にコーポレートインシデントでは活用するようにしています。
+Custom fieldsにTypeという項目を足し、プロダクトインシデントと区別しつつセキュリティインシデントや端末紛失といったコーポレートインシデントもincident.ioで一元的に扱うことにしました。Privateインシデントの機能があり、特にコーポレートインシデントでは活用するようにしています。
 
 ### メトリクス分析
-ちょうどFour keys基盤の構築をしていたので、Time to Restore ServicesとChange Failure Rateを計算にincident.ioを使うことにしました。[APIからインシデント情報をBigQueryに貯める簡単なコード](https://github.com/itkq/incidentio-to-bq)を書き、GitHubの情報を合わせてdbtで集計し、Redash上に可視化しています。
+ちょうどFour keys基盤の構築をしていたので、Time to Restore ServicesとChange Failure Rateの計算にincident.ioを使うことにしました。[APIからインシデント情報をBigQueryに貯める簡単なコード](https://github.com/itkq/incidentio-to-bq)を書き、GitHubの情報を合わせてdbtで集計し、Redash上に可視化しています。
 
 ### エスカレーション体制
 各事業におけるインシデントリード、プロダクトや機能単位であるFirst responder、共通基盤やインフラなどのSecond responderを定義し、プロダクトやSeverityに応じてエスカレーションする体制を整えました。また、Opsgenieと連携し、システム的な電話呼び出しに対応しました。
