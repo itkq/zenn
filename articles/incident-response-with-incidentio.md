@@ -3,7 +3,7 @@ title: "インシデントレスポンスを支えるincident.io"
 emoji: "🚒"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["incidentio"]
-published: false
+published: true
 publication_name: "ubie_dev"
 ---
 
@@ -18,7 +18,7 @@ Ubie DiscoveryでSREをしているitkqです。Ubie Discoveryでは、[incident
 
 https://incident.io/
 
-イギリスのスタートアップが作っている、インシデントレスポンスを行うSaaSです。YouTubeのProduct walk-throughでイメージが分かると思います。
+イギリスのスタートアップが作っている、インシデントレスポンスを行うSaaSです。YouTubeのProduct walk-throughで動作イメージが掴めます。
 
 https://www.youtube.com/watch?v=uoSKbDsV-EY
 
@@ -86,7 +86,7 @@ SREのプラクティスと、incident.ioの機能を見比べながら、イン
 
 ![Incident response document](/images/incident-response-with-incidentio/doc.png =700x)
 *インシデントレスポンスのドキュメント (一部抜粋)*
-    
+
 ### フォローアップの定期確認とポストモーテムの民主化
 incident.ioではインシデント横断でフォローアップ進捗を確認できます。この機能を使い、SREの定例で進捗をチェックしつつ、ヒアリングやリマインドするようにしました。
 
